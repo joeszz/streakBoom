@@ -768,7 +768,13 @@ header{
 
 </style>
 </head>
-
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("./sw.js")
+    .then(() => console.log("PWA aktif"))
+    .catch(err => console.error("SW error:", err));
+}
+</script>
 <body>
 
 <div class="container">
